@@ -6,15 +6,15 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/30 19:46:05 by mbourdel          #+#    #+#              #
-#    Updated: 2015/05/18 19:09:01 by mbourdel         ###   ########.fr        #
+#    Updated: 2015/05/18 22:17:41 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+global	_ft_isalpha			;ft_isalpha(int c)
+
 section .text
-	global	_ft_isalpha		;ft_isalpha(int c)
 
 _ft_isalpha:
-	push	rdi				;save rdi addr
 	cmp		rdi,	97
 	jge		sup_a_min		;if c >= 'a'
 	cmp 	rdi, 	65
@@ -37,8 +37,6 @@ false:
 
 true:
 	mov		rax,	1		;is alpha ret(1)
-	jmp		end
 
 end:
-	pop		rdi				;restore rdi addr
 	ret
