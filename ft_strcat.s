@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-global	_ft_strcat			;ft_strcat(const char *s1, const char *s2)
+global	_ft_strcat			;ft_strcat(char *s1, const char *s2)
 
 section	.text
 
@@ -20,5 +20,19 @@ _ft_strcat:
 
 src_end:
 	cmp		rdi,	0
-	je		dkfgdfngfd
-	
+	je		cat
+	inc		rdi
+	jmp		src_end
+
+cat:
+	mov		rdi,	rsi
+	inc		rdi
+	cmp		rsi,	0
+	je		end
+	inc		rsi
+	jmp		cat
+
+end:
+	pop		rdi
+	pop		rsi
+	ret
