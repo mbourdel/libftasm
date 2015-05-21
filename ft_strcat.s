@@ -19,15 +19,15 @@ _ft_strcat:
 	push	rsi				;save rsi addr (s2)
 
 src_end:
-	cmp		rdi,	0
+	cmp	byte[rdi],	0
 	je		cat
 	inc		rdi
 	jmp		src_end
 
 cat:
-	mov		rdi,	rsi
+	mov	byte[rdi],	byte[rsi]
 	inc		rdi
-	cmp		rsi,	0
+	cmp	byte[rsi],	0
 	je		end
 	inc		rsi
 	jmp		cat

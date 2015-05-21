@@ -15,7 +15,6 @@ global	_ft_bzero		;ft_bzero(void *s, size_t n)
 section .text
 
 _ft_bzero:
-	push	rdi				;save rdi addr
 	cmp		rdi,	0		;secure if rdi null
 	jz		end
 	mov		rcx,	rsi		;set n as counter
@@ -23,10 +22,10 @@ _ft_bzero:
 loop_start:					;while
 	cmp		rcx,	0		;n > 0
 	jz		end
-	movb	rdi,	0		;s = 0 s++
+	mov	byte[rdi],	0		;*s = 0
+	inc		rdi
 	dec		rcx				;n--
 	jmp		loop_start
 
 end:
-	pop		rdi				;restore rdi addr
 	ret
