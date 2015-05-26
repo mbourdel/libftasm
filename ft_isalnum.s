@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_isalnum.s                                       :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/05/18 19:23:20 by mbourdel          #+#    #+#              #
-#    Updated: 2015/05/18 22:15:31 by mbourdel         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 global	_ft_isalnum		;ft_isalnum(int c)
 extern	_ft_isalpha		;dependence
 extern	_ft_isdigit		;dependence
