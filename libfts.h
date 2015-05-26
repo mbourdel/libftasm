@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:01:46 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/05/26 11:04:01 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/05/26 18:05:02 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int				ft_isalnum(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 char			*ft_strcat(char *dest, const char *src);
+int				ft_puts(const char *str);
 
 #endif
