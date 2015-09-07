@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/06/01 23:08:16 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/09/05 22:17:24 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,27 @@ int		main()
 		printf("GG\n");
 
 
-		return ;
+	/*		puts		*/
+	/*------------------*/
 
+
+
+
+	/*		strlen		*/
+	/*------------------*/
+
+	printf("ft_strlen test:\t\t");
+	if (ft_strlen("tata yoyo") != strlen("tata yoyo"))
+		printf("X\n");
+	else
+	{
+		if (ft_strlen() != strlen())
+			printf("X\n");
+		else if (ft_strlen("\0") != strlen("\0"))
+			printf("X\n");
+		else
+			printf("GG\n");
+	}
+
+	return ;
 }
