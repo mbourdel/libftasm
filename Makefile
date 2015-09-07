@@ -6,7 +6,7 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/27 12:33:32 by mbourdel          #+#    #+#              #
-#    Updated: 2015/05/27 16:46:00 by mbourdel         ###   ########.fr        #
+#    Updated: 2015/09/07 15:13:33 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRC = ft_bzero.s \
 	  ft_toupper.s \
 	  ft_strlen.s \
 	  ft_memset.s \
-	  ft_memcpy.s
+	  ft_memcpy.s \
+	  ft_strdup.s
 
 OBJ = $(SRC:.s=.o)
 
