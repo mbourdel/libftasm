@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:01:46 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/09/07 15:13:04 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/09/08 18:13:21 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int				ft_tolower(int c);
 int				ft_toupper(int c);
 char			*ft_strcat(char *dest, const char *src);
 int				ft_puts(const char *str);
-size_t			ft_strlen(char *str);
+size_t			ft_strlen(const char *str);
 void			*ft_memset(void *b, int c, size_t len);
-void			*memcpy(void *dest, const void *src, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
 char			*ft_strdup(char *str);
 
 #endif
