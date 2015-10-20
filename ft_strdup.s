@@ -6,64 +6,42 @@ extern	_ft_memcpy
 section .text
 
 _ft_strdup:
+	push	rbp
+	mov		rbp,	rsp
+	
 	push	rdi
 	cmp		rdi,	0
 	je		empty
+
+len:
 	call	_ft_strlen
 	inc		rax
-	mov		r8,		rax
 	push	rax
+
+alloc:
 	mov		rdi,	rax
-	mov		rax,	4
-	mul		r8
-	push	rdi
+	sub		rsp,	16
 	call	_malloc
-	cmp		rax,	0
+	add		rsp,	16
+	test	rax,	rax
 	je		fail
+
+copy:
 	mov		rdi,	rax
-	add		esp,	[r8]
 	pop		rdx
 	pop		rsi
-	sub		esp,	[r8]
 	call	_ft_memcpy
+	pop		rbp
 	ret
 
 empty:
 	pop		rdi
 	mov		rax,	0
+	pop		rbp
 	ret
 
 fail:
-	add		esp,	4
 	pop		rdi
 	mov		rax,	0
+	pop		rbp
 	ret
-
-
-;_ft_strdup:
-;	push	rdi
-;	cmp		rsi,	0
-;	je		fail
-;	mov		rax,	0
-;	call	_ft_strlen
-;	inc		rax
-;	mov		r9,		rax
-;	mov		rdi,	rax
-;	call	_malloc
-;	cmp		rax,	0
-;	je		fail
-;	mov		rdi,	rax
-;	pop		rsi
-;	;push	rsi
-;	mov		rcx,	r9
-;	cld
-;	rep		movsb
-;	mov		[rdi],	byte 0
-;	mov		rax,	r8
-;	;pop		rdi
-;	ret
-
-;fail:
-;	mov		rax,	0
-;	pop		rdi
-;	ret	

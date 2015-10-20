@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:01:46 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/09/08 18:13:21 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/10/20 17:26:08 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ size_t			ft_strlen(const char *str);
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 char			*ft_strdup(char *str);
+void			ft_cat(int fd);
 
 #endif

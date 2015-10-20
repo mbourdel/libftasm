@@ -6,7 +6,7 @@
 #    By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/27 12:33:32 by mbourdel          #+#    #+#              #
-#    Updated: 2015/09/07 15:13:33 by mbourdel         ###   ########.fr        #
+#    Updated: 2015/10/20 17:26:39 by mbourdel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC = ft_bzero.s \
 	  ft_strlen.s \
 	  ft_memset.s \
 	  ft_memcpy.s \
-	  ft_strdup.s
+	  ft_strdup.s \
+	  ft_cat.s
 
 OBJ = $(SRC:.s=.o)
 
@@ -50,9 +51,19 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(OBJ)
+	@echo "[=================]"
+	@echo "|     succes !    |"
+	@echo "|      XXXX.o     |"
+	@echo "|  was destroyed  |"
+	@echo "[=================]"
 
 fclean: clean
 	@rm -rf $(NAME)
+	@echo "[=================]"
+	@echo "|     succes !    |"
+	@echo "|     libfts.a    |"
+	@echo "|  was destroyed  |"
+	@echo "[=================]"
 
 re: fclean all
 
