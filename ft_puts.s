@@ -7,6 +7,8 @@ global	_ft_puts		;void	ft_puts(const char *str)
 section	.text
 
 _ft_puts:
+	push	rbp
+	mov		rbp,	rsp
 	mov		r8,		rdi
 	cmp		rdi,	0
 	je		false
@@ -25,9 +27,12 @@ puts:
 	mov		rsi,	r8
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
-	leave
+	mov		rsp,	rbp
+	pop		rbp
 	ret
 
 false:
 	mov		rax,	-1
+	mov		rsp,	rbp
+	pop		rbp
 	ret

@@ -31,17 +31,20 @@ copy:
 	pop		rdx
 	pop		rsi
 	call	_ft_memcpy
+	mov		rsp,	rbp
 	pop		rbp
 	ret
 
 empty:
 	pop		rdi
 	mov		rax,	0
+	mov		rsp,	rbp
 	pop		rbp
 	ret
 
 fail:
 	pop		rdi
 	mov		rax,	0
+	mov		rsp,	rbp
 	pop		rbp
 	ret
