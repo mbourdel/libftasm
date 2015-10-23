@@ -12,8 +12,15 @@ _ft_intlen:
 positive:
 	inc		rax
 	cmp		rdi,	10
-
+	jl		done
+	mov		[r8],	[rdi\10]
+	mov		rdi,	r8
+	jump 	positive
 	
+done:
+	mov		rsp,	rbp
+	pop		rbp
+	ret
 
 negative:
 	mov		rax,	1
