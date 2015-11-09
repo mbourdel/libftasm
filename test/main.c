@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/10/22 15:36:43 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/09 17:01:14 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,7 +273,7 @@ int		main()
 	/*------------------*/
 
 	ft_puts("ft_puts test:\n");
-	ft_puts("Did you see something?\nOh in fact all the test was print by me :)\n");
+	ft_puts("\tDid you see something?\n\tOh in fact all the test \n\twas print by me :)\n");
 
 	/*		 cat		*/
 	/*------------------*/
@@ -281,22 +281,37 @@ int		main()
 	char	file_name[2048];
 	int		fd;
 
-	ft_puts("ft_cat test:\nSo, now this is the final test: enter a file name \n");
+	ft_puts("ft_cat test:\n\tSo, now this is the final test:\n\tenter a file name :");
 	scanf("%s", file_name);
 	fd = open(file_name, O_RDONLY);
 	ft_puts("\n");
 	if (fd < 0)
+		ft_puts("\tInvalid name\n");
+	else
 	{
-		ft_puts("Invalid name\n");
-		return 0;
+		ft_puts("\x1B[1;37m");
+		ft_cat(fd);
+		ft_puts(CLRNC);
+		close(fd);
+		ft_puts("\n\tEverything is Okay?\n");
 	}
-	//ft_puts(WHITE);
-	//ft_puts("\x1B[30m");
-	ft_puts("\x1B[1;37m");
-	ft_cat(fd);
-	ft_puts(CLRNC);
-	close(fd);
-	ft_puts("\nEverything is Okay?\n");
+
+	/*		Bonus		*/
+	/*------------------*/
+
+	ft_puts("\nBonus test:\n");
+	ft_puts("ft_intlen test:\t\t");
+	if (ft_intlen(100) != 3)
+		failure();
+	else if (ft_intlen(-3) != 2)
+		failure();
+	else if (ft_intlen(0) != 1)
+		failure();
+	else
+		succes();
+
+	printf("%d %d %d",ft_intlen(100), ft_intlen(-3), ft_intlen(2));
+
 
 	return 0;
 }

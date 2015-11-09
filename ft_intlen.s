@@ -5,18 +5,29 @@ section .text
 _ft_intlen:
 	push	rbp
 	mov		rbp,	rsp
-	mov		rax,	0
+	mov		r8,		0
 	cmp		rdi,	0
-	jnge	negative
+	js		negative
 
 positive:
-	inc		rax
+	inc		r8
 	cmp		rdi,	10
-
+	jnge	end
+	mov		rax,	rdi
+	mov		rdx,	0
+	mov		r9,		10
+	idiv	r9
+	mov		rdi,	rax
+	jmp		positive
 	
+end:
+	mov		rax,	r8
+	mov		rsp,	rbp
+	pop		rbp
+	ret
 
 negative:
-	mov		rax,	1
-	neg		rax
-	jump	positive
-	
+	inc		r8
+	neg		rdi
+	jmp		positive
+
