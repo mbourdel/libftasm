@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/09 17:01:14 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/10 17:40:41 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,7 +281,7 @@ int		main()
 	char	file_name[2048];
 	int		fd;
 
-	ft_puts("ft_cat test:\n\tSo, now this is the final test:\n\tenter a file name :");
+	ft_puts("ft_cat test:\n\tSo, now this is the final test:\n\tenter a file name : ");
 	scanf("%s", file_name);
 	fd = open(file_name, O_RDONLY);
 	ft_puts("\n");
@@ -303,14 +303,20 @@ int		main()
 	ft_puts("ft_intlen test:\t\t");
 	if (ft_intlen(100) != 3)
 		failure();
-	else if (ft_intlen(-3) != 2)
+	else if (ft_intlen((-3)) != 2)
 		failure();
 	else if (ft_intlen(0) != 1)
 		failure();
 	else
 		succes();
 
-	printf("%d %d %d",ft_intlen(100), ft_intlen(-3), ft_intlen(2));
+	int		h = 0;
+	ft_puts("please enter a number : ");
+	scanf("%d", &h);
+	ft_puts("ft_putnbr test:\t\t");
+	ft_putnbr(h);
+	ft_puts("\n It is okey?\n");
+
 
 
 	return 0;
