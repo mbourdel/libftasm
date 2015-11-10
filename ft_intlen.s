@@ -5,29 +5,33 @@ section .text
 _ft_intlen:
 	push	rbp
 	mov		rbp,	rsp
-	mov		r8,		0
-	cmp		rdi,	0
+	mov		r8d,		0
+	test	edi,	edi
 	js		negative
 
 positive:
-	inc		r8
-	cmp		rdi,	10
+	inc		r8d
+	cmp		edi,	10
 	jnge	end
-	mov		rax,	rdi
-	mov		rdx,	0
-	mov		r9,		10
-	idiv	r9
-	mov		rdi,	rax
+	mov		eax,	edi
+	mov		edx,	0
+	mov		r9d,	10
+	div		r9d
+	mov		edi,	eax
 	jmp		positive
 	
 end:
-	mov		rax,	r8
+	mov		eax,	r8d
 	mov		rsp,	rbp
 	pop		rbp
 	ret
 
 negative:
-	inc		r8
-	neg		rdi
+	inc		r8d
+	neg		edi
 	jmp		positive
+	mov		r8d,	100
+	jmp		end
 
+
+; Only Work on 32-bit cause 64-bit sucks on asm
