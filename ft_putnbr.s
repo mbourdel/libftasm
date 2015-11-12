@@ -7,10 +7,10 @@ extern	_ft_intlen
 
 section .bss
 
-buffer:
-	.buf	resb 50
+;buffer:
+;	.buf	resb 50
 
-;buffer	resb	50
+buffer	resb	512
 ;buffer_len	equ	$-buffer
 
 section .text
@@ -19,53 +19,53 @@ _ft_putnbr:
 	push	rbp
 	mov		rbp,	rsp
 	push	rdi
+	xor		rax,	rax
+	mov		r10,	[rel buffer]
 
 len:
 	call	_ft_intlen
 	pop		rdi
-	inc		eax
 	push	rax
-	mov		r9d,	eax
+	mov		[rel r9],		rax
+	dec		byte[rel r9]
 
 tobuffer:
-	mov		r8,		1
-	cmp		edi,	0
-	jge		buffloop
-	mov	byte[buffer],	45
+	xor		r8,		r8
+	test	edi,	edi
+	jns		buffloop
+	mov		byte[rel r10],	45
 	inc		r8
 	neg		edi
 
 buffloop:
 	cmp		edi,	10
 	jnge	last
-	mov		eax,	edi
-	mov		edx,	10
-	div		edx
-	add		edx,	48
-	add		buffer,	r9d
-	mov	byte[buffer],	edx
-	sub		buffer,	r9d
-	dec		r9d
+	mov		rax,	rdi
+	xor		rdx,	rdx
+	mov		r11,	10
+	div		r11
+	mov		[rel r10 + r9],	dl
+	dec		byte[rel r9]
 	jmp		buffloop
 
 xlast:
-	add		edi,	48
-	add		buffer,	1
-	mov	byte[buffer],	edi
-	pop		rsi
+	add		rdi,	48
+	mov		[rel r10 + 1],		dil
+	push	r10
 	jmp		print
 	
 last:
 	cmp		r8,		1
 	je		xlast
-	add		edi,	48
-	mov	byte[buffer],	edi
-	pop		rsi
+	add		rdi,	48
+	mov		[rel buffer],		dil
+	push	r10
 
 print:
+	pop		rsi
 	pop		rdx
-	mov		edi,	STDOUT
-	mov		eax,	MACH_SYSCALL(WRITE)
+	mov		rdi,	STDOUT
+	mov		rax,	MACH_SYSCALL(WRITE)
 	syscall
 
 end:
