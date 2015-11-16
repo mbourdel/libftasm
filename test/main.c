@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/10 17:40:41 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/16 18:07:52 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -310,6 +310,30 @@ int		main()
 	else
 		succes();
 
+	ft_puts("ft_itoa test:\t\t");
+	char	*l1;
+	char	*l2;
+	char	*l3;
+	char	*l4;
+
+	l1 = ft_itoa(0);
+	l2 = ft_itoa(46900);
+	l3 = ft_itoa(-399);
+	l4 = ft_itoa(-1);
+	if (strcmp(l1, "0") != 0)
+		failure();
+	else if (strcmp(l2, "46900") != 0)
+		failure();
+	else if (strcmp(l3, "-399") != 0)
+		failure();
+	else if	(strcmp(l4, "-1") != 0)
+		failure();
+	else
+		succes();
+	free(l1);
+	free(l2);
+	free(l3);
+	free(l4);
 	int		h = 0;
 	ft_puts("please enter a number : ");
 	scanf("%d", &h);
