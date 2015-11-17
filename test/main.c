@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/16 18:07:52 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/17 14:58:00 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -339,7 +339,23 @@ int		main()
 	scanf("%d", &h);
 	ft_puts("ft_putnbr test:\t\t");
 	ft_putnbr(h);
-	ft_puts("\n It is okey?\n");
+	ft_puts("\n\tIt is okey?\n");
+
+	ft_puts("ft_strcmp test :\t");
+	if (ft_strcmp("toto", "toto") != 0)
+		failure();
+	else if (ft_strcmp("", "toto") != strcmp("", "toto"))
+		failure();
+	else if (ft_strcmp("toto", "") != strcmp("toto", ""))
+		failure();
+	else if (ft_strcmp("aaaa", "bbbb") != strcmp("aaaa", "bbbb"))
+		failure();
+	else if (ft_strcmp("bbbb", "aaaa") != strcmp("bbbb", "aaaa"))
+		failure();
+	else
+		succes();
+
+
 
 
 
