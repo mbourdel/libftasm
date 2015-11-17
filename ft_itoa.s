@@ -11,10 +11,10 @@ section .text
 _ft_itoa:
 	push	rbp
 	mov		rbp,	rsp
-	push	rdi
 	xor		rax,	rax
 	lea		rsi,	[rel buffer]
 	push	rsi
+	push	rdi
 
 len:
 	call	_ft_intlen
