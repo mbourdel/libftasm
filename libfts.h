@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:01:46 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/17 12:32:04 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/17 15:18:11 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ size_t			ft_intlen(int nbr);
 void			ft_putnbr(int nbr);
 char			*ft_itoa(int nbr);
 int				ft_strcmp(const char *s1, const char *s2);
+int				ft_isspace(int c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbourdel <mbourdel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 14:26:52 by mbourdel          #+#    #+#             */
-/*   Updated: 2015/11/17 14:58:00 by mbourdel         ###   ########.fr       */
+/*   Updated: 2015/11/17 15:21:17 by mbourdel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -355,7 +355,15 @@ int		main()
 	else
 		succes();
 
-
+	ft_puts("ft_isspace test :\t");
+	if (ft_isspace('\t') != 1)
+		failure();
+	else if (ft_isspace(' ') != 1)
+		failure();
+	else if (ft_isspace(3) != 0)
+		failure();
+	else
+		succes();
 
 
 
